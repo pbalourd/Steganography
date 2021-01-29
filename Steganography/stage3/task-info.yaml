@@ -8,3 +8,9 @@ files:
   visible: false
 - name: test/testimage.png
   visible: false
+- name: test/out.png
+  visible: false
+- name: test/small.png
+  visible: false
+- name: test/out2.png
+  visible: false
