@@ -2,15 +2,9 @@ type: edu
 files:
 - name: src/steganography/Main.kt
   visible: true
-- name: test/KotlinTest.java
-  visible: false
 - name: test/SteganographyTest.kt
   visible: false
 - name: test/testimage.png
   visible: false
-- name: test/out.png
-  visible: false
 - name: test/small.png
-  visible: false
-- name: test/out2.png
   visible: false

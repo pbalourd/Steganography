@@ -1,4 +1,5 @@
-import org.hyperskill.hstest.dynamic.input.DynamicTestingMethod
+import org.hyperskill.hstest.dynamic.DynamicTest
+import org.hyperskill.hstest.stage.StageTest
 import org.hyperskill.hstest.testcase.CheckResult
 import org.hyperskill.hstest.testing.TestedProgram
 import java.awt.Color
@@ -7,10 +8,10 @@ import java.io.File
 import java.security.MessageDigest
 import javax.imageio.ImageIO
 
-class SteganographyTest: KotlinTest() {
-    @DynamicTestingMethod
+class SteganographyTest: StageTest<Any>() {
+    @DynamicTest
     fun imageCreateTest(): CheckResult {
-        val main = TestedProgram(mainClass)
+        val main = TestedProgram()
         var outputString = main.start().toLowerCase().trim()
         if (!outputString.contains("task (hide, show, exit):")) {
             return CheckResult(false, "Prompt \"Task (hide, show, exit):\" is missing.")
@@ -84,9 +85,9 @@ class SteganographyTest: KotlinTest() {
         return CheckResult(true, "")
     }
 
-    @DynamicTestingMethod
+    @DynamicTest
     fun smallImageTest(): CheckResult {
-        val main = TestedProgram(mainClass)
+        val main = TestedProgram()
         var outputString = main.start().toLowerCase().trim()
         if (!outputString.contains("task (hide, show, exit):")) {
             return CheckResult(false, "Prompt \"Task (hide, show, exit):\" is missing.")

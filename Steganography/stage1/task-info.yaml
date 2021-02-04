@@ -4,5 +4,3 @@ files:
   visible: true
 - name: test/SteganographyTest.kt
   visible: false
-- name: test/KotlinTest.java
-  visible: false

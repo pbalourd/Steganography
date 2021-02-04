@@ -1,11 +1,12 @@
-import org.hyperskill.hstest.dynamic.input.DynamicTestingMethod
+import org.hyperskill.hstest.dynamic.DynamicTest
+import org.hyperskill.hstest.stage.StageTest
 import org.hyperskill.hstest.testcase.CheckResult
 import org.hyperskill.hstest.testing.TestedProgram
 
-class SteganographyTest: KotlinTest() {
-    @DynamicTestingMethod
+class SteganographyTest: StageTest<Any>() {
+    @DynamicTest
     fun menuTest(): CheckResult {
-        val main = TestedProgram(mainClass)
+        val main = TestedProgram()
         var outputString = main.start().toLowerCase().trim()
         if (!outputString.contains("task (hide, show, exit):")) {
             return CheckResult(false, "Prompt \"Task (hide, show, exit):\" is missing.")
